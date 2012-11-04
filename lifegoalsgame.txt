@@ -1,0 +1,101 @@
+Lifechoices
+
+a decision making game.  
+mostly simulation but presenting the user with opportunities to affect their characters lives/ 
+make decisions on behalf of their character.
+touch-screen friendly.  user will mainly click on yes/no/answer buttons to make decisions on situations presented on pop-up dialogs.
+otherwise, character will live his life on display for the user.  
+cartoonish representation of character will perform/attend major life-events, with accompanying text describing the event.
+These life-events should be closely tied/determined by characters starting 'kit' and previous decisions.
+ie, a drug using characters will start to see scenarios/events that arise out of drug use
+This is not intended to be serious or accurately portray... anything.  It's supposed to be funny and stupid.
+
+Starting Kit (want to capture the 'hand that God dealt' here.  
+stuff that you have no choice over (family you're born into) yet is commonly regarded as having a major impact on your life:
+1) family choices
+    a.  wealthy - (money is no object... except when other people want it)
+		1.  movie stars - (grandfathered into movie industry)
+		2.  politician - Taken
+		3.  scientist - maybe too boring
+	b.  poor -
+	    1.  active drug-users (access to drugs at an early age gives real business opportunities in your elementary school)
+		2.  former movie stars (child of carrot-top gets made fun of in schoo... bullying/fights/decisions)
+
+character goals:
+these will determine which events take place and how often.  goals will be provided as a slider so the user can adjust them to their liking.
+at various points in the characters life (adolescents/early adulthood/major life-events), user will have opportunity to add new points.
+popularity:
+financial success:
+education:
+fun:
+education:
+humanitariasm:
+self-expression (art):		
+		
+Granularity:
+
+"Life is a serious of unfortunate events"
+art should display your character 'going about his life'.. basically going from one unfortunate event to another.  
+smoothly blending events would be great.
+somehow have the character transition between events...   
+
+cartoonish art.
+
+
+
+
+
+
+
+IMPLEMENTATION OF EVENTS/DECISIONS
+
+2 types of events:
+    minor events: events that the user has no interaction with.  they just happen.
+       they may still have an effect on characters life/traits. 
+       these are randomly selected from a pool of options (which is generated given a character's background/personality)
+      
+       the process by which the 'event pool' is generated must take into account the person's background/personality/past decisions
+       meaning, that these events must be associated with certain traits.
+       
+       How about this:
+       
+       All events have a list of 'associations'.  Basically lists of all of the circumstantial stuff that could trigger the event
+       ie., 
+      
+       'Tried Cocaine for the first time' could be triggered by a variety of factors:
+            a. past use of lesser drugs (past decisions). 
+            b. having social connections. (need to think more on how to track this.... it's clearly a key factor in someone's life but)
+            c. the desire to have fun in life (life goal)
+            
+       so if any of these factors are relevant, this event will become part of the 'event pool'.  
+       its likelihood of selection will be determined by how many of these factors are met.
+       
+       Events form part of a network.  They can be linked... or rather, they can open up future events.
+       ie., "first time weed usage" might open up "first time Cocaine use" and "dope-dealer" to be selected in the event pool later.
+       This could lead to usage/sale of harder drugs, which could open up Gang membership/theft/burglary/ --> Police Charges/ etc.
+       
+       
+
+    Major events:  events that the user HAS an interaction with.  We give the user a chance to decide yes or no.
+       These should be life-changing events that have major ramifications on life and open up all sorts of future events.
+       
+           
+           
+           
+ Need a way of demonstrating difficulty in altering life-course.  Mostly arbitrary... but how about this.
+    Events have a type (drug use is bad, murder/assault/etc is bad).  The first instance of a type of event 
+    can be the hardest/ most dramatic/lifechanging, etc.... but future instances are easier.  
+    
+    So a player starts of mostly neutral... very difficult decisions award a negative point value... easy decisions award positive point values.
+    
+    these point values can be used to determine size of the yes/no buttons... or maybe the alpha on them... so they blend into the background if
+    it's a particularly hard decision.  
+    
+    This way, we can also convey the difficulty in giving up hard/addtive drugs... (going through rehab successfully would require finding that 
+    super-alpha-blended 'yes' button (several times in a row.... representing relapse potential))
+    
+    Killing that first person would be a super hard decision.... but subsequent murders become easier and easier.
+    
+    
+ 
+    
