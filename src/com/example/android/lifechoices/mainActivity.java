@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.basicglsurfaceview;
+package com.example.android.lifechoices;
 
 import android.app.Application;
 import android.annotation.TargetApi;
@@ -31,14 +31,14 @@ import android.os.Handler;
 
 
 @TargetApi(11)
-public class BasicGLSurfaceViewActivity extends Activity {
+public class MainActivity extends Activity {
 
-    private BasicGLSurfaceView mView;
+    private MyGLSurfaceView mView;
     private GameDriver mGame;
     private Handler myHandler = null;
     private LinearLayout eventLayout = null;
     private LinearLayout debugLayout = null;
-    private BasicGLSurfaceViewActivity thisActivity = null;
+    private MainActivity thisActivity = null;
     
     private static int counter = 0;
 
@@ -133,7 +133,7 @@ public class BasicGLSurfaceViewActivity extends Activity {
         
         Application app = getApplication();
         mGame = (GameDriver) getApplication();
-        mView = new BasicGLSurfaceView(mGame, mGame);
+        mView = new MyGLSurfaceView(mGame, mGame);
         myHandler = new Handler();          
         
         eventLayout = new LinearLayout(this);
