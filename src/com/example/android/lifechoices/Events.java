@@ -1,9 +1,9 @@
 
-package com.example.android.basicglsurfaceview;
+package com.example.android.lifechoices;
 
 public class Events
 {
     public Events() {}
     
-    public List<Event> events
+   // public List<Event> events
 }

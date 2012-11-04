@@ -1,4 +1,4 @@
-package com.example.android.basicglsurfaceview;
+package com.example.android.lifechoices;
 
 import android.app.Application;
 import android.os.Environment;
@@ -10,7 +10,7 @@ public class GameDriver extends Application {
     private static String EXTERNAL_STORAGE_DIRECTORY = Environment.getExternalStorageDirectory().toString();
     final static String TARGET_BASE_PATH = EXTERNAL_STORAGE_DIRECTORY + "/GeoViewer";
 
-    private BasicGLSurfaceView mGLView = null;
+    private MyGLSurfaceView mGLView = null;
     private CharacterInfo mCharacter = null;
     public CharacterInfo getCharacter() {return mCharacter;}
     
@@ -30,12 +30,12 @@ public class GameDriver extends Application {
        mCharacter.update();
     }
 
-    public void reinit(BasicGLSurfaceView view) {
+    public void reinit(MyGLSurfaceView view) {
         Log.d(TAG, "reinit");
         mGLView = view;
     }
 
-    public BasicGLSurfaceView getGLView() {
+    public MyGLSurfaceView getGLView() {
         return mGLView;
     }
 

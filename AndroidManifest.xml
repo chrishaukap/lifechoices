@@ -19,7 +19,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.basicglsurfaceview">
+    package="com.example.android.lifechoices">
     <uses-feature android:glEsVersion="0x00020000" />
     <uses-sdk
         android:minSdkVersion="10"

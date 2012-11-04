@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.basicglsurfaceview;
+package com.example.android.lifechoices;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,9 +35,9 @@ import android.opengl.Matrix;
 import android.os.SystemClock;
 import android.util.Log;
 
-class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
+class Gl20Renderer implements GLSurfaceView.Renderer {
 
-    public GLES20TriangleRenderer(Context context, GameDriver game) {
+    public Gl20Renderer(Context context, GameDriver game) {
     	mContext = context;
         mGame = game;
         mTriangleVertices = ByteBuffer.allocateDirect(mTriangleVerticesData.length
@@ -158,8 +158,7 @@ class GLES20TriangleRenderer implements GLSurfaceView.Renderer {
         GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,
                 GLES20.GL_REPEAT);
 
-        InputStream is = mContext.getResources()
-            .openRawResource(R.raw.robot);
+        InputStream is = mContext.getResources().openRawResource(R.raw.robot);
         Bitmap bitmap;
         try {
             bitmap = BitmapFactory.decodeStream(is);

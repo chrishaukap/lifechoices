@@ -1,4 +1,4 @@
-package com.example.android.basicglsurfaceview;
+package com.example.android.lifechoices;
 
 class GameDef {
     
