@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.android.lifechoices;
+package com.evilmordekai.lifechoices;
+
+import com.evilmordekai.lifechoices.Karma.Category;
 
 import android.app.Application;
 import android.annotation.TargetApi;
@@ -39,10 +41,8 @@ public class MainActivity extends Activity {
     private LinearLayout eventLayout = null;
     private LinearLayout debugLayout = null;
     private MainActivity thisActivity = null;
-    
-    private static int counter = 0;
 
-	private static int maxVisibleMinorEvents = 6;
+    private static int maxVisibleMinorEvents = 6;
     private Runnable update=new Runnable() {
     	private void cullLifeEvents()
     	{
@@ -60,15 +60,7 @@ public class MainActivity extends Activity {
     			intensity += 0.1f;    			
     		}
     	}
-    	private int debugIdx = 0;
-    	private String[] debugArray = {
-    	      "You killed a Frog", 
-    	      "You Stepped on a crack", 
-    	      "Your Mother beat you with a belt", 
-    	      "You tried weed for the first time", 
-    	      "You got too drunk at a party", 
-    	      "Oops, you're pregnant", 
-    	};
+    	
     	public void run() {
             // do real work here
 
@@ -76,17 +68,11 @@ public class MainActivity extends Activity {
                cullLifeEvents();
                alphaFade();
                
-               mGame.update();
                
-               counter++;
-               String text = debugArray[debugIdx] + ": " + counter;
-
-               ++debugIdx;
-               if(debugIdx >= debugArray.length)
-                  debugIdx = 0;
-               
+               Event event = mGame.update(); // constructs event pool, selects next event
+                              
                TextView t = new TextView(thisActivity);  
-               t.setText(text);  
+               t.setText(event.mEventString);  
                t.setTextSize(40);  
                t.setTextColor(Color.BLACK);
                 // debug
@@ -108,7 +94,23 @@ public class MainActivity extends Activity {
        CharacterInfo c = mGame.getCharacter();
        String debugText = "Age: " + c.age() + "\n" + 
                           "AgeGroup: " + c.ageGroup() + "\n" +
-                          "LifeGoal: " + c.lifeGoals + "\n";
+                          "LifeGoal: " + c.mLifeGoals + "\n" +
+                          "Karma:\n" +
+                          "  Lust " + c.getKarma(Category.Lust) + "\n" +
+                          "  Gluttony " + c.getKarma(Category.Gluttony) + "\n" +
+                          "  Greed " + c.getKarma(Category.Greed) + "\n" +
+                          "  Sloth " + c.getKarma(Category.Sloth) + "\n" +
+                          "  Wrath " + c.getKarma(Category.Wrath) + "\n" +
+                          "  Envy " + c.getKarma(Category.Envy) + "\n" +
+                          "  Pride " + c.getKarma(Category.Pride) + "\n" +
+                          "  Chastity " + c.getKarma(Category.Chastity) + "\n" +
+                          "  Temperance " + c.getKarma(Category.Temperance) + "\n" +
+                          "  Generosity " + c.getKarma(Category.Generosity) + "\n" +
+                          "  Diligence " + c.getKarma(Category.Diligence) + "\n" +
+                          "  Patience " + c.getKarma(Category.Patience) + "\n" +
+                          "  Charity " + c.getKarma(Category.Charity) + "\n" +
+                          "  Humility " + c.getKarma(Category.Humility) + "\n";
+      		
        view.setText(debugText);
        view.setGravity(Gravity.RIGHT);
        debugLayout.addView(view);

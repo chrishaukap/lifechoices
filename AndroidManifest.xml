@@ -19,15 +19,15 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.lifechoices">
+    package="com.evilmordekai.lifechoices">
     <uses-feature android:glEsVersion="0x00020000" />
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="16" />
-    <application android:label="com.example.android.basicglsurfaceview.GameDriver" 
+    <application android:label="com.evilmordekai.lifechoices.GameDriver" 
                  android:debuggable="true" 
                  android:name="GameDriver">
-        <activity android:name="BasicGLSurfaceViewActivity"
+        <activity android:name="MainActivity"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                 android:launchMode="singleTask"
                 android:configChanges="orientation|keyboardHidden">

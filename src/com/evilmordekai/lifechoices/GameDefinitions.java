@@ -1,8 +1,16 @@
-package com.example.android.lifechoices;
+package com.evilmordekai.lifechoices;
 
 class GameDef {
     
-    public enum AgeGroup{ Infant, Child, Teen, Twenties, Thirties, MiddleAged, Retirement, Elderly, Dead}
+    public enum AgeGroup{ 
+       Infant(1), Toddler(2), Child(3), Teen(4), Twenties(5), Thirties(6), 
+       MiddleAged(7), Retirement(8), Elderly(9), Dead(10);
+       private final int mValue;
+       private AgeGroup(int _value){
+          mValue = _value;
+       }
+       public int value() {return mValue;}
+    }
     public static AgeGroup getAgeGroup(int ageInMonths)
     {
     	float age = ageInMonths/12;

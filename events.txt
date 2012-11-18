@@ -1,0 +1,38 @@
+
+
+we can't feasibly link events together... the spiderweb that would create would be huge.. 
+and i think there's an easier way.
+
+I think we can express the same sorts of relationships (good events leading to good events, bad leading to more bad events)
+by rating each event with some sort of a karma range...  that is, the range of karma the user must have 
+for this event to be possible.
+
+for example, the Event "Visited by celestial beings to honor you for your good deeds" would have huge positve karma requirements.... if the player's karma
+was below this level, they could not possibly hit this event.
+
+in addition, if we add categories to events (including, drug-use, good-deeds, education....)
+and add facets to karma (basically have a seperate karma score for each category... the users total karma
+would be the cumulative total over all categories) then we can now *weigh* the afore-mentioned 'karma-threshold' by category.
+
+So in the case of the 'celestial beings' event, Good-Deeds karma would have huge positive ramificaitons... while 
+karma in the 'violence to mankind' category would have huge negative ramifications... and karma in the 'education category' doesn't really matter.
+
+One possible way to categorize the negative-karma events is with the seven deadly sins.... but i've never liked
+that 'lust' is on that list.... though i suppose many people have wrecked their lives because of this 'sin' :)
+
+What do you think of incorporating the 7 sins into the game?  If not in negative event categories, then 
+how about character traits?  We could make the character assign a certain number of points to these sins... higher points in each category
+would weight event-selection in some way.
+
+if we do a little bit of research we could probably find '7 virtues' online to categorize the positive-karma events.
+
+overall, categorizing in this way can make events much simpler to model in the code... we just maintain a list of events with these properties....
+but no longer have to maintain any interrelationship between events.  Having a High Karma score in good-deeds will lead to more more and more good-deeds category events.
+and, if you have no/low good-deeds category karma, then you can *still* access the good-deeds events by having higher levels of karma in other categories (although that karma
+won't be valued as highly for this purpose)
+
+
+
+
+
+

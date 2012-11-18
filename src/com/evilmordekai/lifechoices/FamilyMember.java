@@ -1,4 +1,4 @@
-package com.example.android.lifechoices;
+package com.evilmordekai.lifechoices;
 
 import java.util.List;
 

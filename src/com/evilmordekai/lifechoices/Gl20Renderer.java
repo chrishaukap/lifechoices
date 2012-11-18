@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.lifechoices;
+package com.evilmordekai.lifechoices;
 
 import java.io.IOException;
 import java.io.InputStream;
