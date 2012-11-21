@@ -21,7 +21,9 @@ import com.evilmordekai.lifechoices.Karma.Category;
 import android.app.Application;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.TextView;
 import android.graphics.Color;
@@ -56,7 +58,8 @@ public class MainActivity extends Activity {
     		float intensity = 0.3f;
     		for(int i=0; i<numChildren; ++i)
     		{
-    		   ((TextView)eventLayout.getChildAt(i)).setAlpha(intensity);
+    		   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) 
+    		      ((TextView)eventLayout.getChildAt(i)).setAlpha(intensity);
     			intensity += 0.1f;    			
     		}
     	}
